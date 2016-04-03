@@ -1,0 +1,17 @@
+<md-dialog aria-label="{{comic.name}}" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{comic.name}}</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+
+            <div class="md-dialog-content">
+                <p>{{comic.description}}</p>
+                <img ng-src="{{comic.path+'/portrait_uncanny.'+comic.extension}}">
+            </div>
+        </md-dialog-content>
+
+    </form>
+</md-dialog>

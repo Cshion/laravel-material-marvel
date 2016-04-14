@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-    <title>Laravel</title>
+    <title>Marvel Laravel</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/lib/angular-material/angular-material.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet"  href="/css/style.css">
 
 </head>
 <body>
-<md-toolbar>
-    <h2>
-        <span>Marvel Laravel</span>
-    </h2>
-</md-toolbar>
-
-
-<a ui-sref="latestcomics">Latest comics</a>
 
 <ui-view>
 

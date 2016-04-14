@@ -10,12 +10,13 @@ angular.module("app",
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
         $stateProvider
-            .state('index', {
+            .state('main', {
                 url: "/",
-                templateUrl: "templates/index.html"
+                templateUrl: "templates/index.html",
+                controller: "mainController"
             })
-            .state('latestcomics', {
-                url: "/latest-comics",
+            .state('main.latestcomics', {
+                url: "latest-comics",
                 templateUrl: "templates/comics.html",
                 controller: "latestController"
             })
@@ -29,6 +30,19 @@ angular.module("app",
         var comicService = $resource("/api/comics");
 
         return comicService;
+    })
+    .controller("mainController", function ($scope, $mdSidenav, $state) {
+
+        $scope.goToggle = function (stateName, notToggle) {
+            if (stateName) {
+                $state.go(stateName);
+            }
+
+            if (!notToggle) {
+                $mdSidenav("left")
+                    .toggle();
+            }
+        };
     })
     .controller("latestController", function ($scope, $mdDialog, $mdMedia, comicService) {
         $scope.comics = comicService.query();
@@ -56,7 +70,7 @@ angular.module("app",
             });
         }
     })
-    .controller("dialogComicController", function ($scope,comic,$mdDialog) {
+    .controller("dialogComicController", function ($scope, comic, $mdDialog) {
         $scope.comic = comic;
         $scope.hide = function () {
             $mdDialog.hide();

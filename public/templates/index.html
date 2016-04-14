@@ -1,0 +1,59 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button ng-click="goToggle(null,false)" class="md-icon-button" aria-label="Menu">
+            <md-icon>menu</md-icon>
+        </md-button>
+
+        <h2>
+            <span>Marvel Laravel</span>
+        </h2>
+
+    </div>
+</md-toolbar>
+
+<md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="false"
+        md-disable-backdrop>
+
+    <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Mas de marvel</h1>
+    </md-toolbar>
+
+    <md-content layout-padding>
+        <md-list ng-cloak>
+
+            <md-list-item ng-click="goToggle('main.latestcomics')">
+                <md-icon>library_books</md-icon>
+                <p>Comics</p>
+            </md-list-item>
+
+            <md-divider></md-divider>
+
+            <md-list-item ng-click="goToggle('main.latestcomics')">
+                <md-icon>style</md-icon>
+                <p>Eventos</p>
+            </md-list-item>
+
+            <md-divider></md-divider>
+
+            <md-list-item ng-click="goToggle('main.latestcomics')">
+                <md-icon>flash_on</md-icon>
+                <p>Personajes</p>
+            </md-list-item>
+
+            <md-divider></md-divider>
+
+
+            <md-list-item ng-click="goToggle('main.latestcomics')">
+                <md-icon>account_circle</md-icon>
+                <p>Artistas</p>
+            </md-list-item>
+
+            <md-divider></md-divider>
+        </md-list>
+    </md-content>
+</md-sidenav>
+
+<ui-view></ui-view>
